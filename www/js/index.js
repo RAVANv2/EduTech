@@ -16,4 +16,3 @@ function onDeviceReady() {
         alert('Failed because: ' + message);
     }
 }
-
