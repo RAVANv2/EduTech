@@ -13,6 +13,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=ZqrYwU8S">
+    </script>
 </head>
 
 <body>
@@ -20,11 +22,16 @@
     <canvas id="myCanvas"></canvas>
 
     <div class="container">
-
+        <p id="show_summary"></p>
+        <a href="" id="tts_link">TTS</a>
         <textarea type="text" placeholder="Enter text to summarize here..." id="full_text"></textarea>
         <input type="file" id="image_ocr" />
         <button id="summary">Summarize</button>
         <button id="ocr">OCR</button>
+        <button id="tts">TTS</button>
+        <button onclick="responsiveVoice.speak(document.getElementById('show_summary').innerHTML);" type="button"
+            value="Play">Play</button>
+        <button onclick="responsiveVoice.pause();" type="button" value="Pause">Pause</button>
     </div>
 </body>
 <script>
@@ -39,7 +46,19 @@
                 },
                 function (data, status) {
                     console.log(data)
-                    alert("Summary:" + data);
+                    document.getElementById('show_summary').innerHTML = data;
+                });
+        });
+
+        $("#tts").click(function () {
+            let data = document.getElementById("show_summary").innerHTML;
+            $.post("http://localhost:3000/api/tts",
+                {
+                    text: `The autoencoder produces a dense representation, that is, the representation of the original image is highly compressed.`
+                },
+                function (data, status) {
+                    console.log(data)
+                    document.getElementById('tts_link').getAttribute(href) = data;
                 });
         });
 
@@ -60,9 +79,9 @@
                 });
                 FR.readAsDataURL(this.files[0]);
             }
-
         })
     });
 </script>
+
 
 </html>
