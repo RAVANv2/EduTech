@@ -18,10 +18,112 @@
 </head>
 
 <body>
-    <image alt="image" id="myImage" height="800px" width="800px" />
-    <canvas id="myCanvas"></canvas>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      
+      <div class="container" style="margin-top: 2%;">
+      <div class="card mb-4" >
+        <h3 class="card-header">Question It</h3>
+        
+        <div class="card-body">
+           <h5 class="card-title">what's the problem ??</h5>
+        <div>
+            <div class="container my-4">
+             <div class="row text-center">
+            <div class="col-md-3 mb-3">
+            <img class="rounded-circle" alt="50x50" style="height: 15em;width:15em;" src="./img/summary.png"                  data-holder-rendered="true">
+            </div>
+            
+            <div class="card">
+            <blockquote class="blockquote" style="margin-top:2%;">
+                <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+              </blockquote>
+            </div>
+            </div>
+         </div>
+        </div>
 
-    <div class="container">
+        <div>
+            <div class="container my-4">
+             <div class="row text-center">
+            <div class="card">
+            <blockquote class="blockquote" style="margin-top:2%;">
+                <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+              </blockquote>
+            </div>
+              <div class="col-md-3 mb-3">
+                <img class="rounded-circle" alt="50x50" style="height: 15em;width:15em;" src="./img/narration.png"                  data-holder-rendered="true">
+                </div>
+            </div>
+         </div>
+        </div>
+
+        <div>
+            <div class="container my-4">
+             <div class="row text-center">
+            <div class="col-md-3 mb-3">
+            <img class="rounded-circle" alt="50x50" style="height: 15em;width:15em;" src="./img/ocr.png"                  data-holder-rendered="true">
+            </div>
+            
+            <div class="card">
+            <blockquote class="blockquote" style="margin-top:2%;">
+                <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+              </blockquote>
+            </div>
+            </div>
+         </div>
+        </div>
+
+        <div>
+            <div class="container my-4">
+             <div class="row text-center">
+            <div class="card">
+            <blockquote class="blockquote" style="margin-top:2%;">
+                <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+              </blockquote>
+            </div>
+              <div class="col-md-3 mb-3">
+                <img class="rounded-circle" alt="50x50" style="height: 15em;width:15em;" src="./img/question.png"                  data-holder-rendered="true">
+                </div>
+            </div>
+         </div>
+        </div>
+ <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+
+ </div>
+</div>
+
+     <div class="container">
         <p id="show_summary"></p>
         <a href="" id="tts_link">TTS</a>
         <textarea type="text" placeholder="Enter text to summarize here..." id="full_text"></textarea>
@@ -33,6 +135,7 @@
             value="Play">Play</button>
         <button onclick="responsiveVoice.pause();" type="button" value="Pause">Pause</button>
     </div>
+    </div>  
 </body>
 <script>
     $(document).ready(function () {
