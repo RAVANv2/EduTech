@@ -164,7 +164,7 @@
                 var FR = new FileReader();
                 FR.addEventListener("load", function (e) {
                     // document.getElementById("myImage").src = e.target.result;
-                    $.post("http://localhost:3000/api/ocr",
+                    $.post("https://peaceful-savannah-75498.herokuapp.com/api/ocr",
                         {
                             photo: e.target.result
                         },
