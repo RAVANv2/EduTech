@@ -47,9 +47,13 @@
 
     <div class="container">
         <b>
-            <div id="translate_hindi" class="card">
-            </div><br>
-            <div id="translate_marathi" class="card">
+            <div id="translate_hindi" class="card" style="margin-top: 2%;padding: 2%; background-color: thistle;">
+                <h3 class="card-title">HINDI TRANSLATION</h3>
+                
+            </div>
+            <br><br>
+            <div id="translate_marathi" class="card" style="margin-top: 2%;padding: 2%; background-color:gainsboro">
+                <h3 class="card-title">MARATHI TRANSLATION</h3>
             </div>
         </b>
     </div>
@@ -65,8 +69,8 @@
                 text: localStorage.getItem('summary')
             }, function (data, status) {
                 console.log(data);
-                document.getElementById('translate_hindi').innerHTML = data.hindi;
-                document.getElementById('translate_marathi').innerHTML = data.marathi;
+                document.getElementById('translate_hindi').append(data.hindi);
+                document.getElementById('translate_marathi').append(data.marathi);
             })
     })
 </script>

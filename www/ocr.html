@@ -50,7 +50,7 @@
         <div class="card">
             <div class="card">
                 <blockquote class="blockquote text-center"
-                    style="background-image: url('./img/summary-back.png');background-repeat: no-repeat;margin-top: 2%;">
+                    style="background-image:linear-gradient(rgb(176, 211, 250),white);background-repeat: no-repeat;margin-top: 2%;">
                     <b>
                         <p class="mb-0"
                             style="padding: 5%;margin-top: 5%;margin-left: 10%;margin-right:5%;outline-style:solid;"
@@ -59,6 +59,7 @@
                         </p>
                     </b>
                 </blockquote>
+                <br><br>
                 <button type="button" class="btn btn-primary btn-lg"
                     onclick="responsiveVoice.speak(document.getElementById('show_summary').innerHTML);">Narrate</button>
                 <br />
@@ -67,6 +68,8 @@
                 <br>
                 <button onclick="responsiveVoice.resume();" type="button" class="btn btn-primary btn-lg"
                     value="Resume">Resume</button>
+                    <br>
+                    
 
             </div>
         </div>
