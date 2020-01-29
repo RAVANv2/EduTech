@@ -45,13 +45,13 @@
 
   <div class="container">
     <button type="button" class="btn btn-primary btn-lg"
-      onclick="responsiveVoice.speak(document.getElementById('getData').innerHTML);">Narrate</button>
+      onclick="responsiveVoice.speak(document.getElementById('getData').innerHTML);changeTom();">Narrate</button>
 
-    <img src="./img/talking cat .jpg" alt="talking cat"
-      style="margin-top: 5%;height: 40em;width:30em;margin-left: 25%;">
+    <img src="./img/tom_stop.gif" alt="talking cat" style="margin-top: 5%;height: 40em;width:30em;margin-left: 25%;"
+      id="tom">
 
-    <button onclick="responsiveVoice.pause();" type="button" class="btn btn-primary btn-lg" value="Pause"
-      style="margin-left:20% ;">Pause</button>
+    <button onclick="responsiveVoice.pause();changeTomStop();" type="button" class="btn btn-primary btn-lg"
+      value="Pause" style="margin-left:20% ;">Pause</button>
   </div>
   <p id="getData" style="display: none;">
   </p>
@@ -61,6 +61,12 @@
     console.log(localStorage.getItem('summary'));
     document.getElementById('getData').innerHTML = localStorage.getItem('summary');
   })
+  function changeTom() {
+    document.getElementById('tom').src = './img/tom_play.gif';
+  }
+  function changeTomStop() {
+    document.getElementById('tom').src = './img/tom_stop.gif';
+  }
 </script>
 
 </html>

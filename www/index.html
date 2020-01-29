@@ -130,49 +130,10 @@
 
             </div>
         </div>
-
-        <div class="container">
-            <p id="show_summary"></p>
-            <a href="" id="tts_link">TTS</a>
-            <textarea type="text" placeholder="Enter text to summarize here..." id="full_text"></textarea>
-            <img src="" id="myImage" />
-            <!-- <input type="file" id="image_ocr" /> -->
-            <button id="summary">Summarize</button>
-            <button id="ocr">OCR</button>
-            <button id="tts">TTS</button>
-            <button onclick="responsiveVoice.speak(document.getElementById('show_summary').innerHTML);" type="button"
-                value="Play">Play</button>
-            <button onclick="responsiveVoice.pause();" type="button" value="Pause">Pause</button>
-        </div>
     </div>
 </body>
 <script>
     $(document).ready(function () {
-        $("#summary").click(function () {
-            let data = document.getElementById("full_text").value;
-            console.log(data);
-            $.post("https://peaceful-savannah-75498.herokuapp.com/api/summary",
-                {
-                    text: data,
-                    num: 10
-                },
-                function (data, status) {
-                    console.log(data)
-                    document.getElementById('show_summary').innerHTML = data;
-                });
-        });
-
-        $("#tts").click(function () {
-            let data = document.getElementById("show_summary").innerHTML;
-            $.post("http://localhost:3000/api/tts",
-                {
-                    text: `The autoencoder produces a dense representation, that is, the representation of the original image is highly compressed.`
-                },
-                function (data, status) {
-                    console.log(data)
-                    document.getElementById('tts_link').getAttribute(href) = data;
-                });
-        });
 
         $("#image_ocr").on('change', function readFile() {
             if (this.files && this.files[0]) {
