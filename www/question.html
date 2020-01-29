@@ -47,7 +47,7 @@
 
   <div class="container" id="questBody">
     <div class="card text-white bg-info mb-3" style="max-width: 80rem;margin-top: 2%;">
-      <div class="card-header">Question</div>
+      <div class="card-header">Question 1: Example Question?</div>
       <div class="card-body">
         <p class="card-text"><input type="radio" name="answer" value="Option 1" />Option 1</br>
           <input type="radio" name="answer" value="Option 2" />Option 2</br>
@@ -60,9 +60,13 @@
   <script>
     $(document).ready(function () {
       console.log(localStorage.getItem('ocr'));
-      $.post("https://706b22f1.ngrok.io", {
-        data: `The first part of the book is a roadmap for all the stuff you need to learn to get ready for the new and improved JavaScript you'll be writing and exploring over the next couple of years.The latter part of the book turns attention to briefly glance at things that we can likely expect to see in the near future of JavaScript. The most important realization here is that post-ES6, JS is likely going to evolve feature by feature rather than version by version, which means we can expect to see these near-future things coming much sooner than you might imagine.The future for JavaScript is bright. Isn't it time we start learning it?`
-
+      $.post("https://b566a033.ngrok.io", {
+        data: localStorage.getItem('ocr'),
+        headers: {
+          "Origin": "https://b566a033.ngrok.io",
+          "Access- Control - Request - Method": "POST",
+          "Access- Control - Request - Headers": "X - Custom - Header"
+        }
       }, function (data, status) {
         console.log(data);
         //  $('#questBody').html($('<div>', { html: $('<div>', { html: $('<div>', { html: $('<p>', { text: 'hello', class: 'card-text' }), class: 'card-body' }), class: 'card-header' }), class: 'card text-white bg-info mb-3', style: 'max-width: 80rem;margin-top: 2%;' }));
@@ -82,10 +86,10 @@
       <div class="card-header">Question ${i + 1} : ${question}</div>
       <div class="card-body">
         <p class="card-text">
-          <input type="radio" name="answer" value="Option 1"/>Option 1</br>
-          <input type="radio" name="answer" value="Option 2"/>Option 2</br>
-          <input type="radio" name="answer" value="Option 3"/>Option 3</br>
-          <input type="radio" name="answer" value="Option 4"/>Option 4</br>
+          <input type="radio" name="answer${i}" value="Option 1"/>Option 1</br>
+          <input type="radio" name="answer${i}" value="Option 2"/>Option 2</br>
+          <input type="radio" name="answer${i}" value="Option 3"/>Option 3</br>
+          <input type="radio" name="answer${i}" value="Option 4"/>Option 4</br>
           </p>
       </div>
     </div>`));
