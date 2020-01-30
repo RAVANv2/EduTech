@@ -4,12 +4,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>summary</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=ZqrYwU8S"></script>
 </head>
 
 <body>
-    OCr
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="./index.html">Brahmastra</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./index.html">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./summary.html">Summary</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./narration.html">Speech</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./ocr.html">Captured Text<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./question.html">Questions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./translate.html">BiLinguality</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="card">
+            <div class="card">
+                <blockquote class="blockquote text-center"
+                    style="background-image:linear-gradient(rgb(176, 211, 250),white);background-repeat: no-repeat;margin-top: 2%;">
+                    <b>
+                        <p class="mb-0"
+                            style="padding: 5%;margin-top: 5%;margin-left: 10%;margin-right:5%;outline-style:solid;"
+                            id="show_summary">
+
+                        </p>
+                    </b>
+                </blockquote>
+                <br><br>
+                <button type="button" class="btn btn-primary btn-lg"
+                    onclick="responsiveVoice.speak(document.getElementById('show_summary').innerHTML);">Narrate</button>
+                <br />
+                <button onclick="responsiveVoice.pause();" type="button" class="btn btn-primary btn-lg"
+                    value="Pause">Pause</button>
+                <br>
+                <button onclick="responsiveVoice.resume();" type="button" class="btn btn-primary btn-lg"
+                    value="Resume">Resume</button>
+                <br>
+
+
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+
+            let data = localStorage.getItem("ocr");
+            console.log(data);
+            document.getElementById('show_summary').innerHTML = data;
+        })
+    </script>
 </body>
 
 </html>
